@@ -13,30 +13,52 @@
 
 */
 
+/* Add in a link for the background image being sd_back1.png and make the position to fixed with the size being 100%. */
+
 /* HTML Styles */
 html {
     background-image: url(sd_back1.png);
-    background-image: fixed;
+    background-position: fixed;
     background-size: 100%;
 }
 
+/* Add in another link for the background image for the body to have sd_back2.png and add multiple radial gradients for the look of the stars. Make the background color to be a light grey and add a box shadow to both of the sides of the body by changing one of the 30pixels to a -30pixels. */
+
 /* Body Styles */
 body {
-    background-image: url(sd_back2.png);
-    background-image: radial-gradient(circle closest-corner (40%, 75%), white 15% rgba(151, 151, 151, 0.5) 50%);
-    background-image: radial-gradient(circle closest-corner (80%, 40%), white 15% rgba(0, 0, 0, 0) 30%);
-    background-image: radial-gradient(circle closest-side (10%, 20%), white 20% rgba(0, 0, 0, 0) 45%);
-    background-image: radial-gradient(5% 5% (90%, 10%) white 15% rgba(0, 0, 0, 0) 45%);
+    background-image: url(sd_back2.png),
+        radial-gradient(circle closest-corner at 40% 75%, white 15%, rgba(151, 151, 151, 0.5) 50%),
+        radial-gradient(circle closest-corner at 80% 40%, white 15%, rgba(0, 0, 0, 0) 30%),
+        radial-gradient(closest-side at 10% 20%, white 20%, rgba(0, 0, 0, 0) 45%),
+        radial-gradient(5% 5% at 90% 10%, white 15%, rgba(0, 0, 0, 0) 40%);
+    background-color: rgb(151, 151, 151);
+    box-shadow: rgb(31, 31, 31) 30px 0px 45px, rgb(31, 31, 31) -30px 0px 45px;
 }
 
+/* Add a body element that has the header a child of the body with the a's (hypertext links) to have their borders to be 5pixels with a outset. Then, have the border color to be white, but with a color code for rgb.  */
+
 /* Navigation List Styles */
+body>header a {
+    border: outset 5px;
+    border-color: rgb(211, 211, 255);
+}
 
-
-
+/* Make the articles h1 that is in the section#left to be a light grey with the change of a rgb color code and change the text-shadow to a black. Then, make make the img#mportrait have a filter for a drop shadow with a drak grey and a low opacityn and have the image flip over.  */
 
 /* Section Left Styles */
+section#left article h1 {
+    color: rgb(211, 211, 211);
+    text-shadow: rgb(0, 0, 0) 0px 0px 5px;
+}
 
+section#left img#mportrait {
+    filter: drop-shadow(-15px 0px 5px rgba(51, 51, 51, 0.9)) grayscale(0.7) opacity(0.6);
+    transform: rotateY(180deg);
+}
 
-
+/* Change the footer to have a solid line of 2 pixels with a light grey to be on the top of the footer. */
 
 /* Footer Styles */
+footer {
+    border-top: solid 2px rgb(171, 171, 171);
+}
